@@ -1,3 +1,59 @@
+# Kata Machine for Algorithms
+
+This is based in the front end masters courses of algorithm prep from 
+The Primeagen.
+
+For more info see the README files of the part1 and part2 inside this repo.
+
+The order of the files is:
+
+```
+├── part1
+│   ├── 1_linear_search.py
+│   ├── 2_binary_search.py
+│   ├── 3_two_crystal_balls.py
+│   ├── 4_bubble_sort.py
+│   ├── 5_linked_list.py
+│   ├── 6_queue.py
+│   ├── 7_stack.py
+│   ├── 8_ring_buffer.py
+│   ├── 9_recursion_sum_of_n.py
+│   ├── 10_recursion_maze_solver.py
+│   ├── 11_quicksort.py
+│   ├── 12_mergesort.py
+│   ├── 13_double_linked_list.py
+│   ├── 14_binary_tree_pre_order.py
+│   ├── 15_binary_tree_in_order.py
+│   ├── 16_binary_tree_post_order.py
+│   ├── 17_compare_binary_trees.py
+│   ├── 18_binary_search_tree.py
+│   ├── 19_dfs_on_bst.py
+│   ├── 20_min_heap.py
+│   ├── 21_trie.py
+│   ├── 22_bfs_graph_adj_matrix.py
+│   ├── 23_bfs_graph_adj_list.py
+│   ├── 24_dfs_graph_adj_matrix.py
+│   ├── 25_dfs_graph_adj_list.py
+│   ├── 26_dijkstra_adj_list.py
+│   ├── 27_lru.py
+├── part2
+│   ├── 1_binary_search_tree.py
+│   ├── 2_bst_avl.py
+│   ├── 3_bst_black_red.py
+│   ├── 4_m_way_b_tree.py
+│   ├── 5_bfs_nodes_hops_away.py
+│   ├── 6_dfs_topological_sort.py
+│   ├── 7_prims.py
+│   ├── 8_kruskal.py
+│   ├── 9_ford_fulkerson_max_flow.py
+│   ├── 10_ford_fulkerson_min_cut.py
+│   ├── 11_factorial.py
+│   ├── 12_fibonacci.py
+│   ├── 13_max_subarray.py
+│   ├── 14_coin_change_problem.py
+│   ├── 15_bloom_filter.py
+```
+
 # Tests
 
 To run tests for a file in specific:

@@ -1,6 +1,6 @@
 import unittest
 
-from part1._1_linear_search import linear_search as linear_fn
+from part1.linear_search import linear_search as linear_fn
 
 
 class TestSum(unittest.TestCase):
