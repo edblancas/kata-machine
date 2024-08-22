@@ -3,6 +3,12 @@
 This is based in the front end masters courses of algorithm prep from 
 The Primeagen.
 
+Part 1:
+<https://frontendmasters.com/courses/algorithms/>
+
+Part 2:
+<https://frontendmasters.com/courses/advanced-algorithms/>
+
 For more info see the README files of the part1 and part2 inside this repo.
 
 The order of the files is:
