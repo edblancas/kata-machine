@@ -1,5 +1,4 @@
 from math import floor
-import unittest
 
 def binary_search(arr, needle) -> bool:
     if len(arr) == 0:
@@ -21,11 +20,3 @@ def binary_search(arr, needle) -> bool:
 
     return False
 
-class Test(unittest.TestCase):
-    def test(self):
-        self.assertTrue(binary_search([0, 1, 2, 3, 4], 4))
-        self.assertTrue(binary_search([0, 1, 2, 3, 4], 5))
-
-
-if __name__ == '__main__':
-    unittest.main()

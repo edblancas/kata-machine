@@ -10,7 +10,7 @@ The order of the files is:
 ```
 ├── part1
 │   ├── 1_linear_search.py
-│   ├── 2_binary_search.py
+│   ├── 2_binary_search_list.py
 │   ├── 3_two_crystal_balls.py
 │   ├── 4_bubble_sort.py
 │   ├── 5_linked_list.py
