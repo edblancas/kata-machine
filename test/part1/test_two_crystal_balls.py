@@ -2,7 +2,7 @@ import unittest
 import math
 import random
 
-from part1.two_crystal_balls import two_crystal_balls
+from src.part1.two_crystal_balls import two_crystal_balls
 
 class TestTwoCrystalBalls(unittest.TestCase):
     def test_two_crystal_balls(self):

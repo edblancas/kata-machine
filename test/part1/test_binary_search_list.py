@@ -1,6 +1,6 @@
 import unittest
 
-from part1.binary_search_list import binary_search as binary_fn
+from src.part1.binary_search_list import binary_search as binary_fn
 
 
 class TestBinarySearch(unittest.TestCase):

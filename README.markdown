@@ -67,6 +67,8 @@ To run tests for a file in specific:
 
 ```
 python3 -m unittest discover  -p 'test*linear*.py'
+# to run all tests inside test/
+python3 -m unittest
 ```
 
 The above run for the `test/test_1_linear_search.py`.
@@ -75,3 +77,8 @@ With Neotest you can use `:lua require('neotest').watch.toggle()` to watch
 a test file that will run each time you save the source/test file.
 
 More info [here](https://github.com/nvim-neotest/neotest#watch-tests).
+
+The `./test/__init__.py` is necessary for Neotest to work.
+
+But `./test/__init__.py`, `./test/part1/__init__.py`, and `./test/part2/__init__.py` 
+are necessary for the unittest runner to work, i.e. `python3 -m unittest` commands.

@@ -1,7 +1,6 @@
 import unittest
 
-from part1.linear_search import linear_search as linear_fn
-
+from src.part1.linear_search import linear_search as linear_fn
 
 class TestLinearSearch(unittest.TestCase):
     def test_linear_search(self):
