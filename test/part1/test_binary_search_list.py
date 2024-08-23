@@ -8,6 +8,7 @@ class TestBinarySearch(unittest.TestCase):
         """
         binary search array
         """
+        self.assertTrue(binary_fn([1, 2, 3], 1))
         foo = [1, 3, 4, 69, 71, 81, 90, 99, 420, 1337, 69420]
         result = binary_fn(foo, 69)
         self.assertTrue(result)
