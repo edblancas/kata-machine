@@ -19,7 +19,8 @@ The order of the files is:
 │   ├── 2_binary_search_list.py
 │   ├── 3_two_crystal_balls.py
 │   ├── 4_bubble_sort.py
-│   ├── 5_linked_list.py
+│   ├── 5.1_singly_linked_list.py
+│   ├── 5.2_double_linked_list.py
 │   ├── 6_queue.py
 │   ├── 7_stack.py
 │   ├── 8_ring_buffer.py
