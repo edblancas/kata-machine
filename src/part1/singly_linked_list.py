@@ -38,6 +38,14 @@ class SinglyLinkedList(ListInterface[int]):
             self.head = None
             self.length -= 1
             return v
+        elif idx == 0:
+            tmp_node = self.head
+            self.head = self.head.next
+            tmp_node.next = None
+            self.length -= 1
+            return tmp_node.value
+        elif idx >= self.length:
+            return None
         else:
             curr = self.head
             before = None
@@ -59,7 +67,32 @@ class SinglyLinkedList(ListInterface[int]):
 
         return curr.value
 
-    def print(self):
+    def remove(self, value):
+        if self.length == 0:
+            return -1
+        if self.length == 1:
+            self.length = 0
+            val = self.head.value
+            self.head = None
+            return val
+
         curr = self.head
-        for _ in range(self.length):
-            print(curr.value + "->")
+        before = None
+        for i in range(self.length):
+            if curr.value == value:
+                if i == 0:
+                    tmp = self.head
+                    self.head = self.head.next
+                    tmp.next = None
+                    self.length -= 1
+                    return tmp.value
+
+                self.length -= 1
+                before.next = curr.next
+                curr.next = None
+                return curr.value
+            before = curr
+            curr = curr.next
+
+        return None
+
