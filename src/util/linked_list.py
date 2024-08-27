@@ -5,16 +5,16 @@ from dataclasses import dataclass
 from typing import Any
     
 class ListInterface[T]:
-    def __init__(self):
-        self.length = 0
+    def __init__(self, length=0):
+        self.length = length
 
-    def remove_at(self, index: int) -> Any | None:
+    def remove_at(self, idx: int) -> T | None:
         pass
 
     def remove(self, item: T) -> T | None:
         pass
 
-    def get(self, index: T) -> T | None:
+    def get(self, idx: T) -> T | None:
         pass
 
     def prepend(self, item: T) -> None:
