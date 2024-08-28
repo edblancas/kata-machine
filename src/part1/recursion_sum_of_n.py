@@ -26,6 +26,7 @@ def sum_of_n_rec(n):
 # this is tail recursive, but python3 doesn't has tail rec optimization, so is
 # the same space complexity as the above, you must manually convert this to
 # an iterative way
+# acc should be the base case for sum(1) in this case 1
 def sum_of_n_tail_rec(n, acc):
     if n == 1:
         return acc
