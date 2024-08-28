@@ -19,8 +19,7 @@ The order of the files is:
 │   ├── 2_binary_search_list.py
 │   ├── 3_two_crystal_balls.py
 │   ├── 4_bubble_sort.py
-│   ├── 5.1_singly_linked_list.py
-│   ├── 5.2_double_linked_list.py
+│   ├── 5_singly_linked_list.py
 │   ├── 6_queue.py
 │   ├── 7_stack.py
 │   ├── 8_ring_buffer.py
@@ -28,7 +27,7 @@ The order of the files is:
 │   ├── 10_recursion_maze_solver.py
 │   ├── 11_quicksort.py
 │   ├── 12_mergesort.py
-│   ├── 13_double_linked_list.py
+│   ├── 13_doubly_linked_list.py
 │   ├── 14_binary_tree_pre_order.py
 │   ├── 15_binary_tree_in_order.py
 │   ├── 16_binary_tree_post_order.py
