@@ -5,6 +5,8 @@ class RingBuffer:
     def __init__(self, capacity=3):
         self.length = 0
         self.capacity = capacity
+        # the next attributes must be privates (start with an underscore _),
+        # encapsulation, but for testing purposes we make them visible aka public
         # emulate a fix capacity array, same for all the operations
         self.arr = [None] * self.capacity
         self.head = -1
