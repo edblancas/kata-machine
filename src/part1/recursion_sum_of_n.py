@@ -1,3 +1,8 @@
+# to understand well recursion we need:
+# 1. return address: where the current call returns to and hand out the value
+# 2. return value: we have to return a vaulue and what most matter, make space for it
+# 3. arguments: pass things into the fn, so we put that memory into our system
+
 # this is not tail recursive, and uses the stack frame to save the args, so
 # it adds up to the space complexity
 def sum_of_n_rec(n):
