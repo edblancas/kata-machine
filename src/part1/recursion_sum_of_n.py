@@ -10,7 +10,7 @@
 #       in the sum_of_n_rec_log we log
 
 def sum_of_n_rec_log(n):
-    if n == 0:
+    if n == 1:
         return 1
     out = n + sum_of_n_rec_log(n - 1)
     print(n)
@@ -19,7 +19,7 @@ def sum_of_n_rec_log(n):
 # this is not tail recursive, and uses the stack frame to save the args, so
 # it adds up to the space complexity
 def sum_of_n_rec(n):
-    if n == 0:
+    if n == 1:
         return 1  # cuz the base case o sum(1) is 1
     return n + sum_of_n_rec(n - 1)
 
@@ -27,7 +27,7 @@ def sum_of_n_rec(n):
 # the same space complexity as the above, you must manually convert this to
 # an iterative way
 def sum_of_n_tail_rec(n, acc):
-    if n == 0:
+    if n == 1:
         return acc
     return sum_of_n_tail_rec(n - 1, acc + n)
 
@@ -44,7 +44,7 @@ def sum_of_n_tail_rec(n, acc):
 # }
 def sum_of_n_iter(n, acc):
     while True:
-        if n == 0:
+        if n == 1:
             return acc
         acc = acc + n
         n = n - 1
