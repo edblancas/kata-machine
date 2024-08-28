@@ -3,12 +3,25 @@
 # 2. return value: we have to return a vaulue and what most matter, make space for it
 # 3. arguments: pass things into the fn, so we put that memory into our system
 
+# the recursion call has: 
+# 1. pre: for doing things before the recursion, in this example is only `n +`
+# 2. recurse: actually does the calling of the fn
+# 3. post: like doing log; in the sum_of_n_rec we don't do anything, 
+#       in the sum_of_n_rec_log we log
+
+def sum_of_n_rec_log(n):
+    if n == 0:
+        return 1
+    out = n + sum_of_n_rec_log(n - 1)
+    print(n)
+    return out
+
 # this is not tail recursive, and uses the stack frame to save the args, so
 # it adds up to the space complexity
 def sum_of_n_rec(n):
     if n == 0:
-        return n
-    return sum_of_n_rec(n - 1) + n
+        return 1  # cuz the base case o sum(1) is 1
+    return n + sum_of_n_rec(n - 1)
 
 # this is tail recursive, but python3 doesn't has tail rec optimization, so is
 # the same space complexity as the above, you must manually convert this to
