@@ -14,6 +14,7 @@ def sum_of_n_tail_rec(n, acc):
     return sum_of_n_tail_rec(n - 1, acc + n)
 
 # form the tail rec, is easy to make it iterative, it is just a goto
+# there is no goto in python3, but the code below is the same
 # C code, you can see the translation very clearly without the decrement and +=
 # operator
 # int sum_iter(int n, int acc) {
