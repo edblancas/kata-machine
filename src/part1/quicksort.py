@@ -28,11 +28,10 @@
 # - ALWAYS CHECK THE ORDER WHEN SWAPPING THINGS OUT
 
 def quicksort(arr: list[int]) -> None:
-    return quicksort_rec(arr)
+    return quicksort_iter(arr)
 
 
 def quicksort_rec(arr: list[int]) -> None:
-
     def qs(lo, hi):
         if hi <= lo:
             return
@@ -66,4 +65,34 @@ def quicksort_rec(arr: list[int]) -> None:
 
 
 def quicksort_iter(arr: list[int]) -> None:
-    pass
+    def sort_pivot(lo, hi):
+        idx = lo - 1
+        piv_val = arr[hi]
+        for i, e in enumerate(arr[lo:hi], lo):
+            if e <= piv_val:
+                idx += 1
+                arr[i] = arr[idx]
+                arr[idx] = e
+        idx += 1
+        arr[hi] = arr[idx]
+        arr[idx] = piv_val
+        return idx
+
+    stack = [[0, len(arr) - 1]]
+    while len(stack) > 0:
+        # pop from stack
+        lo, hi = stack.pop()
+        # sort pivot
+        p = sort_pivot(lo, hi)
+        # add to stack left and right, it doesn't matter the order
+        # add while (hi - lo + 1) >= 2, at least 2 elem incliding piv
+        # the +1 is cuz are indices a we need # elements
+
+        # here -1 is to not include the curr piv
+        loc_hi = p - 1
+        if (hi - lo + 1) >= 2:
+            stack.append([lo, loc_hi])
+        # here +1 is to not include the curr piv
+        loc_lo = p + 1
+        if (hi - loc_lo + 1) >= 2:
+            stack.append([lo, hi])
