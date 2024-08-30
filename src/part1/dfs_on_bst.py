@@ -26,3 +26,21 @@ def search(head: BinaryNode | None, needle: int) -> bool:
         return search(head.left, needle)
 
     return search(head.right, needle)
+
+# this is a bit complicated cuz we need a mix of the base case with the 
+# recursion step, so this get hairy really fast if you start running into
+# this weird conditions
+# options for this:
+# - send a parent to the recursive call
+# - do a condition in the base case for null check
+def insert(head, value):
+    if value <= head.value:
+        if not head.left:
+            head.left = BinaryNode(value)
+        else:
+            insert(head.left, value)
+    else:
+        if not head.right:
+            head.right = BinaryNode(value)
+        else:
+            insert(head.right, value)
