@@ -44,3 +44,17 @@ def insert(head, value):
             head.right = BinaryNode(value)
         else:
             insert(head.right, value)
+
+# cases:
+# 1. node is a leaf, i.e. with no children: just delete it
+# 2. node has one child: set parent to child
+# 3. node with two children: we need to reduce our case to either 1 or 2,
+#   Can do either one, or take a decicion based in the height, e.g. the one with the
+#   greater heigh so it gets more balanced.
+#     - largest element in our smaller side (sub-tree), go first left then all the way right
+#     - smallest on the largest side (sub-tree), go first right then all the way left
+#   Either one we can garantee one thing, we are gona encounter with one child or null,
+#   but still have a left child when going right, in the case of all going left then right,
+#   and now we know how to solve it.
+def delete(head, value):
+    pass
