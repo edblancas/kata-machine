@@ -65,6 +65,7 @@ def quicksort_rec(arr: list[int]) -> None:
 
 
 def quicksort_iter(arr: list[int]) -> None:
+    # is the same as the above but for practice I wrote it again
     def sort_pivot(lo, hi):
         idx = lo - 1
         piv_val = arr[hi]
@@ -87,6 +88,14 @@ def quicksort_iter(arr: list[int]) -> None:
         # add to stack left and right, it doesn't matter the order
         # add while (hi - lo + 1) >= 2, at least 2 elem incliding piv
         # the +1 is cuz are indices a we need # elements
+
+        # here we go different than the recursive approach
+        # we obvioulsy still go DFS but we go all the way of the right,
+        # then left, cuz the right part is the last added to the stack
+        # so will be the first popped up 
+
+        # if we want the same behavior as recursive just swap the calls to
+        # to the stack
 
         # here -1 is to not include the curr piv
         loc_hi = p - 1
