@@ -31,8 +31,8 @@ The order of the files is:
 │   ├── 14_binary_tree_pre_order.py
 │   ├── 15_binary_tree_in_order.py
 │   ├── 16_binary_tree_post_order.py
-│   ├── 17_compare_binary_trees.py
-│   ├── 18_binary_search_tree.py
+│   ├── 17_binary_search_tree.py
+│   ├── 18_compare_binary_trees.py
 │   ├── 19_dfs_on_bst.py
 │   ├── 20_min_heap.py
 │   ├── 21_trie.py
