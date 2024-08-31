@@ -64,7 +64,7 @@ class MinHeap():
             right_child = pos*2 + 2
             # if we pass the length the las pos will be the last node available
             # that we removed and put it at 0
-            if left_child >= self.length or right_child >= self.length:
+            if left_child >= self.length:
                 break
             if right_child + 1 <= self.length and self.arr[left_child] > self.arr[right_child]:
                 pos_swap = right_child
