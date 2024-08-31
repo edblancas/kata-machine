@@ -60,10 +60,15 @@ class MinHeap():
         item = self.arr[0]
         pos = 0
         while True:
+        # this check if the children or pos are past the length of the internal arr
+        # is the same check left_child >= self.length
+        # while pos < self.length//2:  
             left_child = pos*2 + 1
             right_child = pos*2 + 2
-            # if we pass the length the las pos will be the last node available
-            # that we removed and put it at 0
+            # if we have no more children pos will be the pos_swap, the last node
+            # that we switched places
+            # i.e. the next empty spot in our complete tree and the right spot for
+            # item
             if left_child >= self.length:
                 break
             if right_child + 1 <= self.length and self.arr[left_child] > self.arr[right_child]:
@@ -71,10 +76,8 @@ class MinHeap():
             else:
                 # if only has left or left is lesser than right
                 pos_swap = left_child
-            if pos_swap < self.length and item <= self.arr[pos_swap]:
+            if item <= self.arr[pos_swap]:
                 break
-            if pos_swap >= self.length:
-                pos_swap = self.length
             self.arr[pos] = self.arr[pos_swap]
             pos = pos_swap
         self.arr[pos] = item
