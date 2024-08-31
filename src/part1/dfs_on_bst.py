@@ -56,5 +56,6 @@ def insert(head, value):
 #   Either one we can garantee one thing, we are gona encounter with one child or null,
 #   but still have a left child when going right, in the case of all going left then right,
 #   and now we know how to solve it.
+# TODO
 def delete(head, value):
     pass
