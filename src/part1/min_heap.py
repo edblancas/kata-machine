@@ -59,18 +59,21 @@ class MinHeap():
     def _bubble_down(self):
         item = self.arr[0]
         pos = 0
-        while True:
+        # while True:
         # this check if the children or pos are past the length of the internal arr
         # is the same check left_child >= self.length
         # while pos < self.length//2:  
+        # if our last index in arr, self.length - 1, is == to pos*2, means we don't
+        # have any children
+        while pos*2 < self.length - 1:
             left_child = pos*2 + 1
             right_child = pos*2 + 2
             # if we have no more children pos will be the pos_swap, the last node
             # that we switched places
             # i.e. the next empty spot in our complete tree and the right spot for
             # item
-            if left_child >= self.length:
-                break
+            # if left_child >= self.length:
+            #     break
             if right_child + 1 <= self.length and self.arr[left_child] > self.arr[right_child]:
                 pos_swap = right_child
             else:
