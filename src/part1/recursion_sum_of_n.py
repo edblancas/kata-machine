@@ -9,6 +9,8 @@
 # 3. post: like doing log; in the sum_of_n_rec we don't do anything, 
 #       in the sum_of_n_rec_log we log
 
+# recursive impl is also called top-bottom
+
 def sum_of_n_rec_log(n):
     if n == 1:
         return 1
@@ -49,3 +51,7 @@ def sum_of_n_iter(n, acc):
             return acc
         acc = acc + n
         n = n - 1
+
+# bottom-up aka tabulation
+def sum_of_n_tab(n):
+    pass
