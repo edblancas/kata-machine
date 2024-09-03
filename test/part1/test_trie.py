@@ -9,15 +9,23 @@ class TestTrie(unittest.TestCase):
         trie.insert("foolish")
         trie.insert("bar")
 
-        self.assertEqual(trie.find("foo").sort(), [
+        self.assertEqual(sorted(trie.find("foo")), [
             "foo",
             "fool",
             "foolish"
         ])
 
-        trie .delete("fool")
+        trie.delete("fool")
 
-        self.assertEqual(trie.find('fo').sort(), [
+        self.assertEqual(sorted(trie.find('fo')), [
             "foo",
+            'foolish'
+        ])
+
+        trie.insert('food')
+
+        self.assertEqual(sorted(trie.find('fo')), [
+            "foo",
+            'food',
             'foolish'
         ])
