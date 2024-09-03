@@ -3,6 +3,7 @@
 # problem: autocomplete english dictionary
 # operations: insert, delete
 # follow-up: cache system
+# Is constant time cuz it's delimited by the longest english word
 from __future__ import annotations
 from dataclasses import dataclass, field
 
@@ -35,6 +36,7 @@ class Trie():
     def _char_str(place: int) -> str:
         return chr(place + ord('a'))
 
+    # TODO do it DFS recursively deleting in post-order operation
     def delete(self, item: str) -> None:
         curr = self.root
         for c in item:
@@ -56,6 +58,9 @@ class Trie():
         self._get_all_words(autocomplete_strs, list(partial), curr)
         return autocomplete_strs
 
+    # DFS in pre-order traversal, we see it and added
+    # this will be in alphabetical order
+    # TODO Do it in BFS, and DFS iterative
     def _get_all_words(self, list_words, partial_list, node):
         if not node:
             return
