@@ -3,6 +3,8 @@
 # problem: autocomplete english dictionary
 # operations: insert, delete
 # follow-up: cache system
+
+# O(h), h = height of the tree
 # Is constant time cuz it's delimited by the longest english word
 from __future__ import annotations
 from dataclasses import dataclass, field
