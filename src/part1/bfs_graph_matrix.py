@@ -16,10 +16,11 @@ def bfs(adj_matrix: list[list[int]], source: int, needle: int) -> list[int] | No
                 prev[idx_node] = next
 
     next = prev[needle]
-    path = []
+    path = deque([needle])
     if next != -1:
         while next != source:
-            path.append(next)
+            path.appendleft(next)
             next = prev[next]
-        return [source] + list(reversed(path)) + [needle]
+        path.appendleft(source)
+        return list(path)
     return None
