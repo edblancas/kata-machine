@@ -12,3 +12,36 @@ matrix2: list[list[int]] = [
     [0, 0, 18, 0, 0, 0, 1],
     [0, 0, 0,  1, 0, 0, 1],
 ]
+
+from src.util.graph import WeightedAdjacencyList, GraphEdge
+
+list2: WeightedAdjacencyList = []
+
+#     >(1)<--->(4) ---->(5)
+#    /          |       /|
+# (0)     ------|------- |
+#    \   v      v        v
+#     >(2) --> (3) <----(6)
+list2[0] = [
+    GraphEdge(1, 3),
+    GraphEdge(to= 2, weight= 1)
+]
+list2[1] = [
+    GraphEdge(to= 4, weight= 1)
+]
+list2[2] = [
+    GraphEdge(to= 3, weight= 7)
+]
+list2[3] = [ ]
+list2[4] = [
+    GraphEdge(to= 1, weight= 1),
+    GraphEdge(to= 3, weight= 5),
+    GraphEdge(to= 5, weight= 2)
+]
+list2[5] = [
+    GraphEdge(to= 2, weight= 18),
+    GraphEdge( to= 6, weight= 1)
+]
+list2[6] = [
+    GraphEdge(to= 3, weight= 1)
+]
