@@ -15,7 +15,7 @@ matrix2: list[list[int]] = [
 
 from src.util.graph import WeightedAdjacencyList, GraphEdge
 
-list2: WeightedAdjacencyList = []
+list2: WeightedAdjacencyList = [[None] for _ in range(7)]
 
 #     >(1)<--->(4) ---->(5)
 #    /          |       /|
