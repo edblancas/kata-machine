@@ -45,3 +45,12 @@ list2[5] = [
 list2[6] = [
     GraphEdge(to= 3, weight= 1)
 ]
+
+dijksra_graph_dict = {
+    'book': {'lp': 5, 'poster': 0},
+    'lp': {'bass guitar': 15, 'drums': 20},
+    'poster': {'bass guitar': 30, 'drums': 35},
+    'bass guitar': {'piano': 20, 'poster':0},
+    'drums': {'piano': 10},
+    'piano': {}
+}
