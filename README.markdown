@@ -1,4 +1,4 @@
-# Kata Machine for Algorithms
+# Kata Machine
 
 This is based in the front end masters courses of algorithm prep from 
 The Primeagen.
