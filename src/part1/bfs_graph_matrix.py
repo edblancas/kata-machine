@@ -16,6 +16,7 @@ def bfs(adj_matrix: list[list[int]], source: int, needle: int) -> list[int] | No
                 prev[idx_node] = next
 
     next = prev[needle]
+    # more performant than usint a list and reverse it at the end
     path = deque([needle])
     if next != -1:
         while next != source:
