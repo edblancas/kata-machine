@@ -3,36 +3,28 @@
 # 2. return value: we have to return a vaulue and what most matter, make space for it
 # 3. arguments: pass things into the fn, so we put that memory into our system
 
-# the recursion call has: 
+# the recursion call has:
 # 1. pre: for doing things before the recursion, in this example is only `n +`
 # 2. recurse: actually does the calling of the fn
-# 3. post: like doing log; in the sum_of_n_rec we don't do anything, 
-#       in the sum_of_n_rec_log we log
+# 3. post: like doing log
 
 # recursive impl is also called top-bottom
 
-def sum_of_n_rec_log(n):
-    if n == 1:
-        return 1
-    out = n + sum_of_n_rec_log(n - 1)
-    print(n)
-    return out
+
+def sum_of_n_rec_log(n): ...
+
 
 # this is not tail recursive, and uses the stack frame to save the args, so
 # it adds up to the space complexity
-def sum_of_n_rec(n):
-    if n == 1:
-        return 1  # cuz the base case o sum(1) is 1
-    return n + sum_of_n_rec(n - 1)
+def sum_of_n_rec(n): ...
+
 
 # this is tail recursive, but python3 doesn't has tail rec optimization, so is
 # the same space complexity as the above, you must manually convert this to
 # an iterative way
 # acc should be the base case for sum(1) in this case 1
-def sum_of_n_tail_rec(n, acc):
-    if n == 1:
-        return acc
-    return sum_of_n_tail_rec(n - 1, acc + n)
+def sum_of_n_tail_rec(n, acc): ...
+
 
 # form the tail rec, is easy to make it iterative, it is just a goto
 # there is no goto in python3, but the code below is the same
@@ -45,13 +37,8 @@ def sum_of_n_tail_rec(n, acc):
 #         n = n - 1  // n--;
 #         goto top;
 # }
-def sum_of_n_iter(n, acc):
-    while True:
-        if n == 1:
-            return acc
-        acc = acc + n
-        n = n - 1
+def sum_of_n_iter(n, acc): ...
+
 
 # bottom-up aka tabulation
-def sum_of_n_tab(n):
-    pass
+def sum_of_n_tab(n): ...
