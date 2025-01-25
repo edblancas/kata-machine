@@ -22,7 +22,8 @@ The order of the files is:
 │   ├── 5_singly_linked_list.py
 │   ├── 6_queue.py
 │   ├── 7_stack.py
-│   ├── 8_ring_buffer.py
+│   ├── 8.1_array_list.py -> lacks implementation
+│   ├── 8.2_ring_buffer.py
 │   ├── 9_recursion_sum_of_n.py
 │   ├── 10_recursion_maze_solver.py
 │   ├── 11_quicksort.py
