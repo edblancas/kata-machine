@@ -15,20 +15,24 @@ class DoublyLinkedList(ListInterface):
         self.tail = None
 
     def insert_at(self, item: int, idx: int) -> None:
-        node = ListNode(item)
+        if idx < 0:
+            return None
 
         curr = self.head
         for _ in range(idx):
             curr = curr.next
 
-        if idx == 0 or self.length == 0:
+        node = ListNode(item)
+
+        if idx == 0:
             self.head = node
 
-        if idx == self.length or self.length == 0:
-            self.tail = node
-
+        if curr.prev:
+            curr.prev.next = node
+        if curr.next:
+            curr.next.prev = node
+            curr.next = curr.next.next
         node.next = curr
-        node.prev = curr.prev
         curr.prev = node
         self.length += 1
 
