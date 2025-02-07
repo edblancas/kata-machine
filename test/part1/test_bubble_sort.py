@@ -6,3 +6,13 @@ class TestBubbleSort(unittest.TestCase):
         arr = [9, 3, 7, 4, 69, 420, 42]
         bubble_sort(arr)
         self.assertEqual(arr, [3, 4, 7, 9, 42, 69, 420])
+
+    def test_bubble_sort2(self):
+        arr = [9, 3]
+        bubble_sort(arr)
+        self.assertEqual(arr, [3, 9])
+
+    def test_bubble_sort2(self):
+        arr = [9]
+        bubble_sort(arr)
+        self.assertEqual(arr, [9])
