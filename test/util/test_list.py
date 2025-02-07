@@ -22,6 +22,8 @@ def test_list(self, list: ListInterface[int]) -> None:
 
     self.assertEqual(list.get(2), 5)
     self.assertEqual(list.get(0), 9)
+    list.print()
     self.assertEqual(list.remove(9), 9)
+    list.print()
     self.assertEqual(list.length, 2)
     self.assertEqual(list.get(0), 7)
