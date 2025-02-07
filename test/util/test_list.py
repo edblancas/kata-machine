@@ -22,8 +22,13 @@ def test_list(self, list: ListInterface[int]) -> None:
 
     self.assertEqual(list.get(2), 5)
     self.assertEqual(list.get(0), 9)
-    list.print()
     self.assertEqual(list.remove(9), 9)
-    list.print()
     self.assertEqual(list.length, 2)
     self.assertEqual(list.get(0), 7)
+
+
+def test_insert_at_double_linked_list(self, list: ListInterface[int]) -> None:
+    test_list(self, list)
+    list.insert_at(66, 1)
+    self.assertEqual(list.get(1), 66)
+    self.assertEqual(list.get(2), 5)
