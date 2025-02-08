@@ -1,5 +1,5 @@
 import unittest
-from src.part1.recursion_sum_of_n import sum_of_n_rec, sum_of_n_tail_rec, sum_of_n_iter, sum_of_n_rec_log
+from src.part1.recursion_sum_of_n import sum_of_n_rec, sum_of_n_tail_rec, sum_of_n_iter, sum_of_n_rec_log, sum_of_tab
 
 class TestRecSumN(unittest.TestCase):
     def test_sum_n_rec(self):
@@ -13,3 +13,6 @@ class TestRecSumN(unittest.TestCase):
 
     def test_sum_n_rec_log(self):
         self.assertEqual(sum_of_n_rec_log(3), 6)
+
+    def test_sum_n_tab(self):
+        self.assertEqual(sum_of_n_tab(3), 6)
