@@ -52,6 +52,20 @@ def sum_of_n_iter(n, acc):
         acc = acc + n
         n = n - 1
 
-# bottom-up aka tabulation
+# Tabulation is a bottom-up dynamic programming approach that uses an array to store results of subproblems iteratively. To find the sum of the first
+# Explanation:
+# - dp[i] stores the sum of the first i natural numbers.
+# - We initialize dp[0] = 0 as a base case.
+# - We iteratively compute dp[i] = dp[i - 1] + i for i from 1 to n.
+# - The final result is in dp[n].
+# This method ensures that we avoid redundant calculations, but it uses O(n) space. If space optimization is needed, a simple iterative sum using a single variable is preferred.
 def sum_of_n_tab(n):
-    pass
+    # Create a table to store the results of subproblems
+    dp = [0] * (n + 1)
+    # Base case: sum of first 0 numbers is 0
+    dp[0] = 0
+    # Fill the table iteratively
+    for i in range(1, n + 1):
+        dp[i] = dp[i - 1] + i
+    # The final answer is stored in dp[n]
+    return dp[n]
