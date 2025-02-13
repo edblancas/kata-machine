@@ -11,12 +11,18 @@ from src.util.linked_list import ListInterface, ListNode
 class DoublyLinkedList(ListInterface):
     def __init__(self, length=0):
         super().__init__(length)
-        self.length = length
         self.head = None
+        self.tail = None
 
     def insert_at(self, item: int, idx: int) -> None:
-        if idx < 0:
-            return None
+        if idx < 0 or idx >= self.length:
+            raise Error('oh no!')
+        elif idx == self.length:
+            self.append(item)
+            return
+        elif idx == 0:
+            self.prepend(item)
+            return
 
         curr = self.head
         for _ in range(idx):
@@ -24,15 +30,9 @@ class DoublyLinkedList(ListInterface):
 
         node = ListNode(item)
 
-        if idx == 0:
-            self.head = node
-
-        if curr.prev:
-            curr.prev.next = node
-        if curr.next:
-            curr.next.prev = node
-            curr.next = curr.next.next
         node.next = curr
+        node.prev = curr.prev
+        curr.prev.next = node
         curr.prev = node
         self.length += 1
 
@@ -47,66 +47,61 @@ class DoublyLinkedList(ListInterface):
             if curr.value == item:
                 return self.remove_at(i)
             curr = curr.next
-
-        return None
+            i += 1
 
 
     def remove_at(self, idx: int) -> ListNode | None:
-        if idx < 0 or idx >= self.length or self.length == 0:
-            return None
-
+        node = self._get_node_at(idx)
+        val = node.value
         if idx == 0:
-            value = self.head.value
-            self.head = self.head.next
-            self.length -= 1
-            return value
-
-        curr = self.head
-        for _ in range(idx):
-            curr = curr.next
-
-        curr.prev.next = curr.next
-        if curr.next:
-            curr.next.prev = curr.prev
+            self.head = node.next
+        elif idx == self.length - 1:
+            self.tail = node.prev
+        else:
+            node.prev.next = node.next
+            node.next.prev = node.prev
         self.length -= 1
-        return curr.value
-
+        return val
 
 
     def get(self, idx):
+        return self._get_node_at(idx).value
+
+
+    def _get_node_at(self, idx):
         if idx < 0 or idx >= self.length:
-            return None
+            raise Error('oh no!')
 
         curr = self.head
         for _ in range(idx):
             curr = curr.next
 
-        return curr.value
+        return curr
 
 
     def prepend(self, item):
         node = ListNode(item)
-        if self.length == 0:
+        self.length += 1
+
+        if not self.head:
             self.head = node
-            self.length += 1
+            self.tail = node
             return
 
-        self.head.prev = node
         node.next = self.head
+        self.head.prev = node
         self.head = node
-        self.length += 1
+
 
     def append(self, item):
+        self.length += 1
         node = ListNode(item)
-        if self.length == 0:
+
+        if not self.head:
             self.head = node
-            self.length += 1
+            self.tail = node
             return
 
-        curr = self.head
-        while curr.next:
-            curr = curr.next
-
-        curr.next = node
-        node.prev = curr
-        self.length += 1
+        node.prev = self.tail
+        self.tail.next = node
+        self.tail = node
