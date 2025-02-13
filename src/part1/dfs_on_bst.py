@@ -8,7 +8,15 @@ from src.util.local_types import BinaryNode
 def dfs(head: BinaryNode, needle: int) -> bool:
     return search(head, needle)
 
-def search(head: BinaryNode | None, needle: int) -> bool: ...
+def search(head: BinaryNode | None, needle: int) -> bool:
+    if head == None:
+        return False
+    if head.value == needle:
+        return True
+    if head.value < needle:
+        return search(head.right, needle)
+    if head.value > needle:
+        return search(head.left, needle)
 
 def insert(head, value): ...
 
