@@ -52,7 +52,6 @@ class DoublyLinkedList(ListInterface):
 
     def remove_at(self, idx: int) -> ListNode | None:
         node = self._get_node_at(idx)
-        val = node.value
         if idx == 0:
             self.head = node.next
         elif idx == self.length - 1:
@@ -61,7 +60,8 @@ class DoublyLinkedList(ListInterface):
             node.prev.next = node.next
             node.next.prev = node.prev
         self.length -= 1
-        return val
+        node.next, node.prev = None, None
+        return node.value
 
 
     def get(self, idx):
