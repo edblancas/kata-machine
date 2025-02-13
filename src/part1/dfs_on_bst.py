@@ -18,6 +18,17 @@ def search(head: BinaryNode | None, needle: int) -> bool:
     if head.value > needle:
         return search(head.left, needle)
 
-def insert(head, value): ...
+def insert(head, value):
+    def insert_aux(curr):
+        if curr == None:
+            return BinaryNode(value)
+        elif curr.value < value:
+            curr.right = insert_aux(curr.right)
+        else:
+            curr.left = insert_aux(curr.left)
+        return curr
+
+    insert_aux(head)
+    return head
 
 def delete(head, value): ...
