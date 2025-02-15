@@ -19,13 +19,16 @@ class LRUNoLookup[K, V]:
     def get(self, key: K) -> V | None: ...
 
 
-@dataclass
 class Node[V]:
-    value: V 
-    next: LRUNode[V] | None = None
-    prev: LRUNode[V] | None = None
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+        self.prev = None
 
-class LRU[K, V]:
+    def __hash__(self):
+        return hash(self.value)
+
+class LRU[V]:
     def __init__(self, capacity=3):
         self.capacity = capacity
 
