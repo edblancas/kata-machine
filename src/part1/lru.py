@@ -37,6 +37,9 @@ class Node2[V]:
 # When you call hash(node), it computes
 #   hash((node.value, node.next, node.prev))
 # If node.prev is not None, Python will call hash(node.prev), which again calls its __hash__ method that hashes (node.prev.value, node.prev.next, node.prev.prev).
+
+# NOTE: THIS WON'T WORK WHEN ADDING WHEN UPDATING WITH TWO DIFFERENT KEYS AND SAME VALUE,
+#   AS THE DICT WILL REPLACE THE SECOND NODE ADDED WITH THE SAME VALUE FOR THE FIRST
 class Node[V]:
     def __init__(self, value):
         self.value = value
