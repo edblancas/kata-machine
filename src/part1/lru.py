@@ -30,8 +30,13 @@ class Node2[V]:
     next: LRUNode[V] | None = None
     prev: LRUNode[V] | None = None
 
-# this works but the dunder hash should only include self.value, if we include next or prev
+# this works but the dunder hash should only include self.value, if we include prev
 # will throw an error as it will be called recursively
+
+# The issue is that by including self.prev in the hash tuple, you're recursively hashing linked nodes. Consider this:
+# When you call hash(node), it computes
+#   hash((node.value, node.next, node.prev))
+# If node.prev is not None, Python will call hash(node.prev), which again calls its __hash__ method that hashes (node.prev.value, node.prev.next, node.prev.prev).
 class Node[V]:
     def __init__(self, value):
         self.value = value
