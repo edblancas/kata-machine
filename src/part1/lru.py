@@ -85,5 +85,19 @@ class LRU[K, V]:
             del self.lookup[tmp_tail_key]
 
 
-class LRUReverseLookup[K,V]:
-    ...
+class Node[V]:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+        self.prev = None
+
+    def __hash__(self):
+        return hash(self.value)
+
+class LRU[V]:
+    def __init__(self, capacity=3):
+        self.capacity = capacity
+
+    def update(self, key: K, value: V) -> None: ...
+
+    def get(self, key: K) -> V | None: ...
