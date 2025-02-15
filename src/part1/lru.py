@@ -40,6 +40,15 @@ class Node2[V]:
 
 # NOTE: THIS WON'T WORK WHEN ADDING WHEN UPDATING WITH TWO DIFFERENT KEYS AND SAME VALUE,
 #   AS THE DICT WILL REPLACE THE SECOND NODE ADDED WITH THE SAME VALUE FOR THE FIRST
+# CHATGPT: No, that's not exactly what happens. Even if two different nodes have the same 
+#   value (and even if their __hash__ returns the same integer), Python dictionaries use 
+#   both the hash and an equality check to distinguish keys. By default, if you haven't 
+#   overridden __eq__, two different node objects are only considered equal if they're 
+#   the exact same object (i.e., they have the same identity).
+# Here's what's important to know:
+# Hash Collisions: Two different objects can have the same hash value. When that occurs, the dictionary stores them in the same bucket, but it then checks for equality using __eq__ to decide if a key is already present. Since your Node class doesn’t override __eq__, two different nodes (even with the same value) are not equal
+# No Overwriting: This means that if you add two different Node instances (each created for different keys but with the same value), the dictionary won’t treat them as the same key. They remain distinct entries, even if their computed hash values are identical.
+
 class Node[V]:
     def __init__(self, value):
         self.value = value
