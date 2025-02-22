@@ -1,5 +1,6 @@
 from src.util.linked_list import ListInterface, ListNode
 
+# with head and tail
 
 class SinglyLinkedList(ListInterface[int]):
     def __init__(self): ...
