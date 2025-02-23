@@ -36,6 +36,8 @@ def compare_binary_trees(head: BinaryNode, head2: BinaryNode) -> bool:
 
         # combine our left sub-tree with our right-subtree, ass long as they
         # are true we are true
+        # Short-Circuiting in "and":
+        #   In Python, the "and" operator uses short-circuit evaluation. If the first operand evaluates to False, Python won’t evaluate the second operand because the overall expression will already be False. However, if the first operand is True, Python must evaluate the second operand to determine the final result.
         return compare_binary_trees_rec(node.left, node2.left) and \
             compare_binary_trees_rec(node.right, node2.right)
 
