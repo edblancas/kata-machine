@@ -22,7 +22,7 @@ The order of the files is:
 │   ├── 5_singly_linked_list.py
 │   ├── 6_queue.py
 │   ├── 7_stack.py
-│   ├── 8.1_array_list.py -> lacks implementation
+│   ├── 8.1_array_list.py -> no file or tests, but is used in stack and ring buffer
 │   ├── 8.2_ring_buffer.py
 │   ├── 9_recursion_sum_of_n.py
 │   ├── 10_recursion_maze_solver.py
@@ -32,7 +32,7 @@ The order of the files is:
 │   ├── 14_binary_tree_pre_order.py
 │   ├── 15_binary_tree_in_order.py
 │   ├── 16_binary_tree_post_order.py
-│   ├── 17_binary_search_tree.py
+│   ├── 17_btbfs.py
 │   ├── 18_compare_binary_trees.py
 │   ├── 19_dfs_on_bst.py
 │   ├── 20_min_heap.py
