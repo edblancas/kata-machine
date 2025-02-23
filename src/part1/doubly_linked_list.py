@@ -54,7 +54,7 @@ class DoublyLinkedList(ListInterface):
         return curr.value
 
 
-    def remove_at(self, idx: int) -> ListNode | None:
+    def remove_at(self, idx: int) -> int | None:
         prev = None
         curr = self.head
         for _ in range(idx):
