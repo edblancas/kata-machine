@@ -45,6 +45,13 @@ def insert(head, value):
         else:
             insert(head.right, value)
 
+def get_min(node: BinaryNode) -> BinaryNode:
+    """Helper: returns the node with the minimum value in a (non-empty) subtree."""
+    current = node
+    while current.left:
+        current = current.left
+    return current
+
 # cases:
 # 1. node is a leaf, i.e. with no children: just delete it
 # 2. node has one child: set parent to child
@@ -56,6 +63,26 @@ def insert(head, value):
 #   Either one we can garantee one thing, we are gona encounter with one child or null,
 #   but still have a left child when going right, in the case of all going left then right,
 #   and now we know how to solve it.
-# TODO
-def delete(head, value):
-    pass
+def delete(head: BinaryNode | None, value: int) -> BinaryNode | None:
+    """
+    Deletes the node with the given value from the BST.
+    Returns the new (sub)tree root.
+    """
+    if head is None:
+        return None
+    if value < head.value:
+        head.left = delete(head.left, value)
+    elif value > head.value:
+        head.right = delete(head.right, value)
+    else:
+        # Node found.
+        if head.left is None:
+            return head.right
+        elif head.right is None:
+            return head.left
+        else:
+            # Node with two children: use the in‑order successor (minimum in right subtree)
+            min_node = get_min(head.right)
+            head.value = min_node.value
+            head.right = delete(head.right, min_node.value)
+    return head
