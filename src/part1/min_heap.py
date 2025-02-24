@@ -49,6 +49,7 @@ class MinHeap():
         item = self.arr[self.length - 1]
         pos = self.length - 1
         parent_idx = (pos - 1)//2
+        # Without verifying that parent_idx >= 0, when the element bubbles all the way up to the root (at index 0), the calculation (pos - 1) // 2 will yield -1. In Python, using -1 accesses the last element of the list, which isn’t the intended behavior and can corrupt the heap structure. So, the condition is necessary to properly stop the loop when the root is reached.
         while parent_idx >= 0 and item < self.arr[parent_idx]:
             # only swap the parent, we set the item at the end
             self.arr[pos] = self.arr[parent_idx]
@@ -59,26 +60,17 @@ class MinHeap():
     def _bubble_down(self):
         item = self.arr[0]
         pos = 0
-        # while True:
-        # this check if the children or pos are past the length of the internal arr
-        # is the same check left_child >= self.length
-        # while pos < self.length//2:  
-        # if our last index in arr, self.length - 1, is == to pos*2, means we don't
-        # have any children
+        # The while loop condition while pos*2 < self.length - 1: ensures that the node at index pos has at least a left child. Is equivalent to checking that 2*pos + 1 < self.length.
         while pos*2 < self.length - 1:
             left_child = pos*2 + 1
             right_child = pos*2 + 2
-            # if we have no more children pos will be the pos_swap, the last node
-            # that we switched places
-            # i.e. the next empty spot in our complete tree and the right spot for
-            # item
-            # if left_child >= self.length:
-            #     break
-            if right_child + 1 <= self.length and self.arr[left_child] > self.arr[right_child]:
+            # checks if the right child exists and whether it is smaller than the left child.
+            if right_child < self.length and self.arr[left_child] > self.arr[right_child]:
                 pos_swap = right_child
             else:
                 # if only has left or left is lesser than right
                 pos_swap = left_child
+            # the min-heap property is satisfied at this position, and the loop breaks.
             if item <= self.arr[pos_swap]:
                 break
             self.arr[pos] = self.arr[pos_swap]
