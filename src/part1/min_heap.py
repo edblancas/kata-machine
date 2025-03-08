@@ -12,8 +12,12 @@
 # 2. it is also a complete binary tree except for the last level
 
 class MinHeap():
-    def __init__(self): ...
+    def __init__(self):
+        self.length = 0
+        self.arr = []
 
-    def insert(self, value: int): ...
+    def insert(self, value: int):
+        if self.length == 0:
+            
 
     def delete(self): ...

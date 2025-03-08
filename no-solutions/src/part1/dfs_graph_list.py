@@ -1,0 +1,3 @@
+from src.util.graph import GraphEdge, WeightedAdjacencyList
+
+def dfs(graph: WeightedAdjacencyList, source: int, needle: int) -> list[int] | None: ...
